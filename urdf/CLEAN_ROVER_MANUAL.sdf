@@ -426,7 +426,7 @@
 				</lidar>
         <gz_frame_id>camera_link</gz_frame_id>
         <always_on>1</always_on>
-				<update_rate>15</update_rate>  <!-- Reduced from 30Hz to improve performance -->
+				<update_rate>5</update_rate>  <!-- Reduced to 5Hz to prevent RViz queue overflow -->
 				<visualize>1</visualize>
 				<topic>camera/points</topic>
 			</sensor>
