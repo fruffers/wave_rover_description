@@ -54,7 +54,7 @@ def generate_launch_description():
             "/joint_states@sensor_msgs/msg/JointState@ignition.msgs.Model",
             "/tf@tf2_msgs/msg/TFMessage@ignition.msgs.Pose_V",
             "/camera/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo",
-            "/camera/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked",
+            "/lidar@sensor_msgs/msg/LaserScan@ignition.msgs.LaserScan",
             "/camera/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image",
             "/camera/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image",
             "/camera/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU",
