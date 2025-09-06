@@ -109,16 +109,30 @@ def generate_launch_description():
             "/tf@tf2_msgs/msg/TFMessage@ignition.msgs.Pose_V",
             "/camera/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo",
             "/camera/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked",
+            "/scan@sensor_msgs/msg/LaserScan@ignition.msgs.LaserScan",
             "/camera/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image",
-            "/camera/depth_image@sensor_msgs/msg/Image@ignition.msgs.Image",
+            "/wave_rover/depth_camera2@sensor_msgs/msg/Image@ignition.msgs.Image",
+            "/wave_rover/depth_camera2/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo",
+            "/wave_rover/depth_camera2/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked",
             "/camera/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU",
-            "/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU"
+            "/imu@sensor_msgs/msg/Imu@ignition.msgs.IMU",
+            '/wave_rover/depth_camera/points@sensor_msgs/msg/PointCloud2@ignition.msgs.PointCloudPacked',
+            '/wave_rover/depth_camera/camera_info@sensor_msgs/msg/CameraInfo@ignition.msgs.CameraInfo',
+            '/wave_rover/depth_camera/image@sensor_msgs/msg/Image@ignition.msgs.Image',
         ],
         output="screen",
         parameters=[
             {'use_sim_time': LaunchConfiguration('use_sim_time')},
         ]
     )
+
+    # Static transform for point cloud frame (ensures proper frame_id for RViz)
+    # camera_points_tf = Node(
+    #     package='tf2_ros',
+    #     executable='static_transform_publisher',
+    #     arguments=['0', '0', '0', '0', '0', '0', 'camera_sensor_link', 'camera_sensor_link'],
+    #     parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
+    # )
 
     # ros_ign_image_bridge = Node(
     #     package="ros_ign_image",
