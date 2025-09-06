@@ -310,6 +310,7 @@
 
       <sensor name="rgbd_camera" type="rgbd_camera">
         <ignition_frame_id>camera_sensor_link</ignition_frame_id>
+        <pose>0 0 0 0 0 -1.5708</pose>
         <camera name="rgbd_camera_frame">
           <horizontal_fov>1.3962634</horizontal_fov>
           <lens>
