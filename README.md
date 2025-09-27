@@ -13,10 +13,11 @@ Launch with: `ros2 launch wave_rover_description gazebo_simulation.launch.py`
 
 Sensors
 - Image RGB
-- Depth Image
+- RBGD depth point cloud
 - Laserscan from camera
 - IMU camera
 - IMU chassis
+
 
 
 
